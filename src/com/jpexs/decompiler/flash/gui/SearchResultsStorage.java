@@ -24,12 +24,14 @@ import com.jpexs.decompiler.flash.search.ActionSearchResult;
 import com.jpexs.decompiler.flash.search.ScriptNotFoundException;
 import com.jpexs.decompiler.flash.search.ScriptSearchResult;
 import com.jpexs.decompiler.flash.treeitems.Openable;
+import com.jpexs.helpers.AllowedObjectInputStream;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputFilter;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
@@ -164,7 +166,7 @@ public class SearchResultsStorage {
                 try {
                     ByteArrayInputStream bais1 = new ByteArrayInputStream(itemData);
                     int kind = bais1.read();
-                    ObjectInputStream ois = new ObjectInputStream(bais1);
+                    ObjectInputStream ois = new AllowedObjectInputStream(bais1);
                     List<byte[]> resultData = readByteList(ois);
                     for (int i = 0; i < resultData.size(); i++) {
                         try {
@@ -194,7 +196,7 @@ public class SearchResultsStorage {
     public synchronized void load() throws IOException {
         String configFile = getConfigFile();
         if (new File(configFile).exists()) {
-            try (FileInputStream fis = new FileInputStream(configFile); ObjectInputStream ois = new ObjectInputStream(fis)) {
+            try (FileInputStream fis = new FileInputStream(configFile); ObjectInputStream ois = new AllowedObjectInputStream(fis)) {                
                 int major = ois.read();
                 ois.read(); // minor
                 if (major != SERIAL_VERSION_MAJOR) { //incompatible version
