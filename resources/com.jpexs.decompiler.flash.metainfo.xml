@@ -67,6 +67,14 @@
 		</screenshot>
 	</screenshots>
 	<releases>
+		<release version="26.2.1" date="2026-05-24">
+			<description>
+				<p>Bug Fixes</p>
+				<ul>
+					<li>fix nullpointer on program start - ui scale (#2720)</li>
+				</ul>
+			</description>
+		</release>
 		<release version="26.2.0" date="2026-05-24">
 			<description>
 				<p>Features</p>

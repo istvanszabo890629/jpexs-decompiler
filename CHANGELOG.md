@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [26.2.1] - 2026-05-24
+### Bug Fixes
+- fix nullpointer on program start - ui scale ([#2720])
+
 ## [26.2.0] - 2026-05-24
 ### Features
 - text tag convertor: set default color, fontId, hasLayout ([#2383])
@@ -4099,6 +4103,7 @@ Major version of SWF to XML export changed to 2.
 ### Added
 - Initial public release
 
+[26.2.1]: https://github.com/jindrapetrik/jpexs-decompiler/compare/version26.2.0...version26.2.1
 [26.2.0]: https://github.com/jindrapetrik/jpexs-decompiler/compare/version26.1.0...version26.2.0
 [26.1.0]: https://github.com/jindrapetrik/jpexs-decompiler/compare/version26.0.0...version26.1.0
 [26.0.0]: https://github.com/jindrapetrik/jpexs-decompiler/compare/version25.1.3...version26.0.0
@@ -4281,6 +4286,7 @@ Major version of SWF to XML export changed to 2.
 [alpha 9]: https://github.com/jindrapetrik/jpexs-decompiler/compare/alpha8...alpha9
 [alpha 8]: https://github.com/jindrapetrik/jpexs-decompiler/compare/alpha7...alpha8
 [alpha 7]: https://github.com/jindrapetrik/jpexs-decompiler/releases/tag/alpha7
+[#2720]: https://www.free-decompiler.com/flash/issues/2720
 [#2383]: https://www.free-decompiler.com/flash/issues/2383
 [#2702]: https://www.free-decompiler.com/flash/issues/2702
 [#2707]: https://www.free-decompiler.com/flash/issues/2707
